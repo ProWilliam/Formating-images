@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/indexStyle.css" />
+</head>
+<body>
+  {% include 'navbar.html' %}
+  {% block body %}
+  {% endblock %}
+    <div id="drop-area" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+        {% if user_id %}
+        Arrastra y suelta tus imágenes aquí {{user_id}}
+        {% else %}
+        Login please!
+        {% endif %}
+    </div>
+    <div>
+        <button id="myButton">
+            send
+        </button>
+    </div>
+</body>
+</html>

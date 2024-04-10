@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+#drop-area {
+  inline-size: 300px;
+  block-size: 200px;
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 200px;
+  margin: 0 auto;
+}
+#drop-area.dragover {
+  background-color: #f0f0f0;
+}
+#drop-area img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  background-color: gray;
+}
