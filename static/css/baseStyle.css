@@ -1,0 +1,13 @@
+:root {
+  /* light theme  */
+  --color-primary: #5f6f52;
+	--color-secondary: #A9B388; 
+  --color-tertiary: #B99470; 
+  --color-quaternary: #FEFAE0;
+
+  /* dark theme  */
+  --color-primary-dark: #003c43;
+	--color-secondary-dark: #135D66; 
+  --color-tertiary-dark: #77B0AA; 
+  --color-quaternary-dark: #E3FEF7;
+}
