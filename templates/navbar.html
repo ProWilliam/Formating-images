@@ -3,5 +3,19 @@
 </style>
 
 <div class="navbar">
-  This is navbar
+  <div class="body-navbar">
+    <div >
+      <img 
+        class="image-logo" 
+        src="{{url_for('static', filename='images/logo.svg')}}" 
+        alt="logo"
+      >
+    </div>
+    <nav  class="nav-style">
+      <a class="active" href="#">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
 </div>
