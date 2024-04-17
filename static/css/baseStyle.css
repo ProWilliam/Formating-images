@@ -11,3 +11,7 @@
   --color-tertiary-dark: #77B0AA; 
   --color-quaternary-dark: #E3FEF7;
 }
+
+.content-body {
+  margin-block-start: 80px;
+}
