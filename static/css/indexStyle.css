@@ -7,20 +7,60 @@ body {
   margin: 0;
 }
 
+.index-section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  padding-block-start: 20px;
+  inline-size: 100%;
+  block-size: 80vh;
+
+  background: var(--color-primary-dark);
+}
+
+.content-info{
+  inline-size: 100%;
+}
+
+.title-content strong {
+  font-size: 60px;
+  color: var(--color-tertiary-dark);
+}
+
+.description-content {
+  font-size: 20px;
+  margin: 2.5rem;
+  color: var(--color-quaternary-dark);
+}
+
 #drop-area {
   inline-size: 300px;
   block-size: 200px;
-  border: 2px dashed #ccc;
+  border: 2px dashed var(--color-tertiary-dark);
   border-radius: 20px;
   text-align: center;
   line-height: 200px;
   margin: 0 auto;
+  font-size: 15px;
+  color: var(--color-quaternary-dark);
 }
-#drop-area.dragover {
-  background-color: #f0f0f0;
-}
+
 #drop-area img {
   max-inline-size: 100%;
   max-block-size: 100%;
-  background-color: gray;
+  background-color: var(--color-tertiary-dark);
+}
+
+.resolution {
+  margin-block-start: 20px;
+  font-size: 20px;
+  color: var(--color-quaternary-dark);
+}
+
+.buttons {
+  display: flex;
+  place-content: center;
+  margin-block-start: 2.5rem;
+  gap: 20px;
 }
