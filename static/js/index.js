@@ -1,43 +1,51 @@
-console.log('this Is js');
-
-export function handleDragOver(event) {
+function handleDragOver(event) {
   event.preventDefault();
   event.stopPropagation();
-  event.dataTransfer.dropEffect = 'copy';
-  event.target.classList.add('dragover');
 }
 
-export function handleDrop(event) {
+function handleDrop(event) {
   event.preventDefault();
   event.stopPropagation();
-  event.target.classList.remove('dragover');
-  var files = event.dataTransfer.files;
+  
+  const files = event.dataTransfer.files;
+
   for (var i = 0; i < files.length; i++) {
-      var file = files[i];
-      if (file.type.startsWith('image/')) {
-          var reader = new FileReader();
-          reader.onload = function(e) {
-              var img = document.createElement('img');
-              img.src = e.target.result;
-              document.getElementById('drop-area').appendChild(img);
-          };
-          reader.readAsDataURL(file);
-      }
+    var archivo = files[i];
+    
+    // Create a URL object for the dropped image.
+    var urlImagen = URL.createObjectURL(archivo);
+    
+    // Create an image element.
+    var img = document.createElement('img');
+
+    img.onload = function() {
+      const resolution = `Size: ${this.width} width | ${this.height} height`;
+      insertResolution(resolution)
+    };
+
+    img.src = urlImagen;
+    
+    // Insert the image into the drop area.
+    var dropArea = document.getElementById('drop-area');
+    dropArea.innerHTML = ''; 
+    dropArea.appendChild(img);
   }
 }
 
-var button = document.querySelector("myButton");
+function insertResolution(resolution) {
+  // Insert resolution image.
+  const elemetClase = document.querySelector('#drop-area');
+  const elementContent = elemetClase.parentNode;
+  const childrenElements = elementContent.children;
 
-// Agrega un event listener para el evento 'click'
-button.addEventListener("click", function() {
-    // Llama a la función que deseas que se active cuando se hace clic en el botón
-    miFuncion();
-});
+  if (childrenElements.length >= 4) {
+    const newElement = document.createElement('div');
 
-
-// Define la función que se activará cuando se haga clic en el botón
-function miFuncion() {
-  // Haz lo que quieras aquí
-  console.log("Se ha hecho clic en el botón");
-  alert("¡Se ha hecho clic en el botón!");
-}
+    newElement.classList.add('resolution')
+    newElement.textContent = resolution;
+    
+    elementContent.insertBefore(newElement, childrenElements[2].nextSibling);
+  } else {
+    console.error("There are not enough child elements: ", childrenElements.length);
+  }
+} 
