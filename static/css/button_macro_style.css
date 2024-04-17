@@ -1,0 +1,21 @@
+#myButton {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+
+.button {
+  inline-size: 200px;
+  block-size: 35px;
+  font-size: 25px;
+  color: var(--color-tertiary-dark);
+  border: 2px solid var(--color-tertiary-dark);
+  border-radius: 10px;
+  background: none;
+}
+
+.button:hover {
+  color: var(--color-primary-dark);
+  background: var(--color-tertiary-dark);
+}
