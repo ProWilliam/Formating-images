@@ -1,7 +1,36 @@
 {% extends 'base.html' %}
+{% import 'macros/button_macro.html' as macros %}
 {% block title %}
 home
 {% endblock %}
 {% block body %}
-<h1>Hello Flask App</h1>
+  <section class="index-section">
+
+    <div class="content-info">
+
+      <div class="title-content">
+
+        <strong>
+          Change Images Formatting
+        </strong>
+      </div>
+
+      <div class="description-content">
+        You can change the format of your images according to your social network.
+        <br>
+        Facebook | Instagram | TikTok | linkedin
+      </div>
+      <div id="drop-area" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+        
+        Drag and drop your images here...
+        
+      </div>
+      <div class="buttons">
+        {{macros.button_action('Formatting')}}
+        {{macros.button_action('Save')}}
+      </div>
+    </div>
+
+  </section>
+  <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
