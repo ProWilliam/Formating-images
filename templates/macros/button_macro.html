@@ -1,0 +1,11 @@
+{% macro button_action(value)%}
+  <link 
+  rel="stylesheet" 
+  href="{{ url_for('static', filename='css/button_macro_style.css') }}"
+  >
+  <div id="myButton">
+    <button class="button">
+      {{value}}
+    </button>
+  </div>
+{% endmacro %}
