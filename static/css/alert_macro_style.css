@@ -1,0 +1,35 @@
+.alert {
+  display: none;
+  position: absolute;
+  inset-block-start: 10%; 
+  inset-inline-start: 100%;
+  width: 200px;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  animation: slideLeft 2s forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    inset-inline-start: 100%;
+  }
+  to {
+    inset-inline-start: 80%;
+  }
+}
+
+.closebtn {
+  margin-inline-start: 15px;
+  color: white;
+  font-weight: bold;
+  float: inline-end;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
