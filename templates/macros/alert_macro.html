@@ -1,0 +1,13 @@
+{% macro alert_danger(text)%}
+  <link 
+    rel="stylesheet" 
+    href="{{ url_for('static', filename='css/alert_macro_style.css') }}"
+  >
+  <!-- Alert  -->
+  <div class="alert" id="alertDanger">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;
+    </span> 
+    <strong>Danger!</strong>
+    {{ text }}
+  </div>
+{% endmacro %}
