@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% import 'macros/button_macro.html' as macros %}
+{% import 'macros/alert_macro.html' as alert %}
 {% block title %}
 home
 {% endblock %}
@@ -7,7 +8,7 @@ home
   <section class="index-section">
 
     <div class="content-info">
-
+      <!-- Information about functionality -->
       <div class="title-content">
 
         <strong>
@@ -20,15 +21,25 @@ home
         <br>
         Facebook | Instagram | TikTok | linkedin
       </div>
+
+      <!-- Drop image Selected -->
       <div id="drop-area" ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
-        
+
         Drag and drop your images here...
         
       </div>
+
+      {{ alert.alert_danger('Sorry but you sould put your images in the drop') }}
+
+      <div class="progress-bar-style">
+        <progress id="progress-bar" value="0" max="100"></progress>
+      </div>
+
       <div class="buttons">
         {{macros.button_action('Formatting')}}
         {{macros.button_action('Save')}}
       </div>
+
     </div>
 
   </section>
