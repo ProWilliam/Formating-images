@@ -52,6 +52,17 @@ body {
   background-color: var(--color-tertiary-dark);
 }
 
+#progress-bar {
+  display: none;
+}
+
+.progress-bar-style {
+  display: flex;
+  place-content: center;
+  margin-block-start: 2.5rem;
+  gap: 20px;
+}
+
 .resolution {
   margin-block-start: 20px;
   font-size: 20px;
